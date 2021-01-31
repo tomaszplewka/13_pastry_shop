@@ -3,11 +3,10 @@ import React from 'react';
 import './category-item.styles.scss';
 
 const CategoryItem = ({title, imageUrl, size}) => (
-    <div
-        style={{ 
+    <div className={`${size !== undefined ? size : ''} category-item`}>
+        <div className="background-image" style={{ 
             backgroundImage: `url(${imageUrl})`
-         }} 
-        className={`${size} category-item`}>
+         }}></div>
         <div className="category-item-content">
             <h2 className="category-item-title">{title}</h2>
             <span className="category-item-subtitle">See All</span>

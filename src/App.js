@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
         <FrontPageCategories/>  
-        <div class="logo"></div>
+        {/* <div class="logo"></div> */}
     </div>
   );
 }

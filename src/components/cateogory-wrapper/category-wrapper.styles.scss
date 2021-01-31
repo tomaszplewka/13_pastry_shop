@@ -1,9 +1,31 @@
 .category-item-wrapper {
-    max-width: 75%;
+    // max-width: 75%;
+    max-width: 1270px;
     margin: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    filter: drop-shadow(-10px 10px 10px rgba(50, 50, 0, 0.5));
+}
+
+.custom-shape-divider-top-1612063714 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1612063714 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1612063714 .shape-fill {
+    fill: #FFFFFF;
 }
