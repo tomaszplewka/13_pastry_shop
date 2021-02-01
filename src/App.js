@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import FrontPageCategories from './pages/frontpage/frontpage-categories.component';
@@ -6,8 +7,10 @@ import FrontPageCategories from './pages/frontpage/frontpage-categories.componen
 function App() {
   return (
     <div>
-        <FrontPageCategories/>  
-        {/* <div class="logo"></div> */}
+      <Switch>
+        <Route exact path='/' component={FrontPageCategories} />
+        {/* <Route exact path='/' component={FrontPageCategories} /> */}
+      </Switch>
     </div>
   );
 }

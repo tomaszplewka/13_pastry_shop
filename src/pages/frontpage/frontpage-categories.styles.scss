@@ -4,5 +4,33 @@ body {
     box-sizing: border-box;
 }
 .frontpage-categories {
+    position: relative;
     background-color: silver;
+}
+.custom-shape-divider-bottom-1612116110 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1612116110 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+.custom-shape-divider-bottom-1612116110 .shape-fill {
+    fill: #FFFFFF;
+}
+
+@media screen and (min-width: 1216px) {
+    
+}
+@media screen and (min-width: 1408px) {
+    .custom-shape-divider-bottom-1612116110 svg {
+        height: 275px;
+    }
 }

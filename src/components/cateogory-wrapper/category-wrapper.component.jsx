@@ -12,7 +12,7 @@ import scones from '../../images/scones.jpg';
 import croissants from '../../images/croissants.jpg';
 import treats from '../../images/treats.jpg';
 import giftBoxes from '../../images/gift-boxes.jpg';
-import catering from '../../images/catering.jpg';
+// import catering from '../../images/catering.jpg';
 
 class CategoryWrapper extends React.Component {
     constructor(props) {
@@ -22,51 +22,60 @@ class CategoryWrapper extends React.Component {
             categoryItems: [{
                 title: 'cakes',
                 imageUrl: cakes,
-                id: 1
+                id: 1,
+                pageUrl: 'cakes'
             },
             {
                 title: 'pies',
                 imageUrl: pies,
-                id: 2
+                id: 2,
+                pageUrl: 'pies'
             },
             {
                 title: 'cookies',
                 imageUrl: cookies,
-                id: 3
+                id: 3,
+                pageUrl: 'cookies'
             },
             {
                 title: 'donuts',
                 imageUrl: donuts,
-                id: 4
+                id: 4,
+                pageUrl: 'donuts'
             },
             {
                 title: 'scones',
                 imageUrl: scones,
-                id: 5
+                id: 5,
+                pageUrl: 'scones'
             },
             {
                 title: 'croissants',
                 imageUrl: croissants,
-                id: 6
+                id: 6,
+                pageUrl: 'croissants'
             },
             {
                 title: 'treats',
                 imageUrl: treats,
                 size: 'large',
-                id: 7
+                id: 7,
+                pageUrl: 'treats'
             },
             {
                 title: 'gift boxes',
                 imageUrl: giftBoxes,
                 size: 'large',
-                id: 8
+                id: 8,
+                pageUrl: 'gift-boxes'
             },
-            {
-                title: 'catering',
-                imageUrl: catering,
-                size: 'large',
-                id: 9
-            }
+            // {
+            //     title: 'catering',
+            //     imageUrl: catering,
+            //     size: 'large',
+            //     id: 9,
+                // pageUrl: 'catering'
+            // }
             ]
         }
     }
@@ -74,15 +83,10 @@ class CategoryWrapper extends React.Component {
         return (
             <div className="category-item-wrapper">
                 {
-                    this.state.categoryItems.map(({title, imageUrl, id, size}) => (
-                        <CategoryItem key={id} title={title} imageUrl={imageUrl} size={size}/>
+                    this.state.categoryItems.map(({id, ...itemsProps}) => (
+                        <CategoryItem key={id} {...itemsProps} />
                     ))
                 }
-                <div class="custom-shape-divider-top-1612063714">
-                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                    </svg>
-                </div>
             </div>
         )
     }
