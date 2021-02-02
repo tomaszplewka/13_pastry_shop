@@ -2,7 +2,7 @@ import React from 'react'
 
 import './frontpage-categories.styles.scss';
 
-import CategoryWrapper from '../../components/cateogory-wrapper/category-wrapper.component';
+import CategoryWrapper from '../../components/category-wrapper/category-wrapper.component';
 
 const FrontPageCategories = () => (
     <div className="frontpage-categories">

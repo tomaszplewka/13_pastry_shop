@@ -8,11 +8,11 @@ import cakes from '../../images/cakes.jpg';
 import pies from '../../images/pies.jpg';
 import cookies from '../../images/cookies.jpg';
 import donuts from '../../images/donuts.jpg';
-import scones from '../../images/scones.jpg';
+// import scones from '../../images/scones.jpg';
 import croissants from '../../images/croissants.jpg';
 import treats from '../../images/treats.jpg';
 import giftBoxes from '../../images/gift-boxes.jpg';
-// import catering from '../../images/catering.jpg';
+import catering from '../../images/catering.jpg';
 
 class CategoryWrapper extends React.Component {
     constructor(props) {
@@ -43,12 +43,12 @@ class CategoryWrapper extends React.Component {
                 id: 4,
                 pageUrl: 'donuts'
             },
-            {
-                title: 'scones',
-                imageUrl: scones,
-                id: 5,
-                pageUrl: 'scones'
-            },
+            // {
+            //     title: 'scones',
+            //     imageUrl: scones,
+            //     id: 5,
+            //     pageUrl: 'scones'
+            // },
             {
                 title: 'croissants',
                 imageUrl: croissants,
@@ -69,13 +69,13 @@ class CategoryWrapper extends React.Component {
                 id: 8,
                 pageUrl: 'gift-boxes'
             },
-            // {
-            //     title: 'catering',
-            //     imageUrl: catering,
-            //     size: 'large',
-            //     id: 9,
-                // pageUrl: 'catering'
-            // }
+            {
+                title: 'catering',
+                imageUrl: catering,
+                size: 'large',
+                id: 9,
+                pageUrl: 'catering'
+            }
             ]
         }
     }
