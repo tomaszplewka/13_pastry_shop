@@ -4,6 +4,8 @@ import data from './shoppage.data';
 
 import CategoryPreview from '../../components/category-preview/category-preview.component';
 
+import './shoppage.styles.scss';
+
 class ShopPage extends React.Component {
     constructor(props) {
         super(props);

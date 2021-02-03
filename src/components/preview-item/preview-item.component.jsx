@@ -2,7 +2,7 @@ import React from 'react';
 
 import './preview-item.styles.scss';
 
-const PreviewItem = ({id, name, imageUrl, price}) => (
+const PreviewItem = ({id, name, imageUrl, price, quantity}) => (
     <div className='preview-item'>
         <div
             className='preview-item-img'
@@ -10,9 +10,11 @@ const PreviewItem = ({id, name, imageUrl, price}) => (
                 backgroundImage: `url(${imageUrl})`
              }}
         ></div>
-        <div className='preview-item-footer'>
+        <div className='preview-item-body'>
              <span className="name">{name}</span>
-             <span className="price">{price}</span>
+             <span className="price">
+                 {`$${price} / ${quantity}`}
+             </span>
         </div>
     </div>
 );

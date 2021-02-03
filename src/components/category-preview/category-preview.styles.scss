@@ -1,0 +1,15 @@
+.category-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(-10px 10px 10px rgba(50, 50, 0, 0.5));
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+
+    &-name {
+        padding: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}

@@ -55,31 +55,36 @@ const ShopPageData = [
                 id: 1,
                 name: 'chocolate cake',
                 imageUrl: chocolateCake,
-                price: 30
+                price: 30,
+                quantity: 'each'
             },
             {
                 id: 2,
-                name: 'white cake with chocolate topping',
+                name: 'white cake with topping',
                 imageUrl: whiteCakeChocolate,
-                price: 35
+                price: 35,
+                quantity: 'each'
             },
             {
                 id: 3,
                 name: 'white cake with blackberries',
                 imageUrl: whiteCakeBlackberry,
-                price: 40
+                price: 40,
+                quantity: 'each'
             },
             {
                 id: 4,
                 name: 'white cake with strawberries',
                 imageUrl: whiteCakeStrawberry,
-                price: 30
+                price: 30,
+                quantity: 'each'
             },
             {
                 id: 5,
                 name: 'coffee cake',
                 imageUrl: coffeeCake,
-                price: 25
+                price: 25,
+                quantity: 'each'
             }
         ]
     },
@@ -92,31 +97,36 @@ const ShopPageData = [
                 id: 1,
                 name: 'carrot pie',
                 imageUrl: carrotPie,
-                price: 15
+                price: 15,
+                quantity: 'each'
             },
             {
                 id: 2,
                 name: 'orange pie',
                 imageUrl: orangePie,
-                price: 20
+                price: 20,
+                quantity: 'each'
             },
             {
                 id: 3,
                 name: 'raspberry pie',
                 imageUrl: raspberryPie,
-                price: 17
+                price: 17,
+                quantity: 'each'
             },
             {
                 id: 4,
                 name: 'pumpkin pie with topping',
                 imageUrl: pumpkinPieTopping,
-                price: 13
+                price: 13,
+                quantity: 'each'
             },
             {
                 id: 5,
                 name: 'plum pie',
                 imageUrl: plumPie,
-                price: 15
+                price: 15,
+                quantity: 'each'
             }
         ]
     },
@@ -129,31 +139,36 @@ const ShopPageData = [
                 id: 1,
                 name: 'oat cookies',
                 imageUrl: oatCookies,
-                price: 3
+                price: 3,
+                quantity: 'each'
             },
             {
                 id: 2,
                 name: 'chocolate chip cookies',
                 imageUrl: chocolateChipCookies,
-                price: 4
+                price: 4,
+                quantity: 'each'
             },
             {
                 id: 3,
                 name: 'cocoa cookies with peanuts',
                 imageUrl: cocoaCookiesPeanuts,
-                price: 5
+                price: 5,
+                quantity: 'each'
             },
             {
                 id: 4,
                 name: 'butter cookies with chocolate',
                 imageUrl: butterCookies,
-                price: 3
+                price: 3,
+                quantity: 'each'
             },
             {
                 id: 5,
                 name: 'gingerbread cookies',
                 imageUrl: gingerbreadCookies,
-                price: 5
+                price: 5,
+                quantity: 'each'
             }
         ]
     },
@@ -166,31 +181,36 @@ const ShopPageData = [
                 id: 1,
                 name: 'crispy donut',
                 imageUrl: crispyDonut,
-                price: 3
+                price: 3,
+                quantity: 'each'
             },
             {
                 id: 2,
                 name: 'chocolate donut',
                 imageUrl: chocolateDonut,
-                price: 4
+                price: 4,
+                quantity: 'each'
             },
             {
                 id: 3,
                 name: 'honey donut',
                 imageUrl: honeyDonut,
-                price: 5
+                price: 5,
+                quantity: 'each'
             },
             {
                 id: 4,
                 name: 'pink donut',
                 imageUrl: pinkDonut,
-                price: 3
+                price: 3,
+                quantity: 'each'
             },
             {
                 id: 5,
                 name: 'blue donut',
                 imageUrl: blueDonut,
-                price: 5
+                price: 5,
+                quantity: 'each'
             }
         ]
     },
@@ -216,31 +236,36 @@ const ShopPageData = [
                 id: 1,
                 name: 'extra large croissants',
                 imageUrl: xlCroissants,
-                price: 3
+                price: 3,
+                quantity: 'each'
             },
             {
                 id: 2,
                 name: 'sugar-croissants',
                 imageUrl: sugarCroissants,
-                price: 4
+                price: 4,
+                quantity: 'each'
             },
             {
                 id: 3,
                 name: 'peanut butter croissants',
                 imageUrl: peanutButterCroissants,
-                price: 5
+                price: 5,
+                quantity: 'each'
             },
             {
                 id: 4,
                 name: 'plain croissants',
                 imageUrl: plainCroissants,
-                price: 3
+                price: 3,
+                quantity: 'each'
             },
             {
                 id: 5,
                 name: 'chocolate croissants',
                 imageUrl: chocolateCroissants,
-                price: 5
+                price: 5,
+                quantity: 'each'
             }
         ]
     },
@@ -253,31 +278,36 @@ const ShopPageData = [
                 id: 1,
                 name: 'classic candies',
                 imageUrl: classicCandies,
-                price: 3
+                price: 3,
+                quantity: '100g'
             },
             {
                 id: 2,
                 name: 'chocolate candies',
                 imageUrl: chocolateCandies,
-                price: 4
+                price: 10,
+                quantity: 'box'
             },
             {
                 id: 3,
                 name: 'pink lollipops',
                 imageUrl: pinkLollipops,
-                price: 5
+                price: 5,
+                quantity: 'each'
             },
             {
                 id: 4,
                 name: 'chocolate glazed lollipops',
                 imageUrl: chocolateGlazedLollipops,
-                price: 3
+                price: 3,
+                quantity: 'each'
             },
             {
                 id: 5,
                 name: 'sour worms',
                 imageUrl: sourWorms,
-                price: 5
+                price: 5,
+                quantity: '100g'
             }
         ]
     },
@@ -290,31 +320,36 @@ const ShopPageData = [
                 id: 1,
                 name: 'cookies gift box set 1',
                 imageUrl: cookiesGiftBoxSet1,
-                price: 3
+                price: 13,
+                quantity: 'box'
             },
             {
                 id: 2,
                 name: 'cookies gift box set 2',
                 imageUrl: cookiesGiftBoxSet2,
-                price: 4
+                price: 14,
+                quantity: 'box'
             },
             {
                 id: 3,
                 name: 'donuts gift box',
                 imageUrl: donutsGiftBox,
-                price: 5
+                price: 15,
+                quantity: 'box'
             },
             {
                 id: 4,
                 name: 'candies gift box',
                 imageUrl: candiesGiftBox,
-                price: 3
+                price: 13,
+                quantity: 'box'
             },
             {
                 id: 5,
                 name: 'custom gift box',
                 imageUrl: customGiftBox,
-                price: 5
+                price: 15,
+                quantity: 'box'
             }
         ]
     },
