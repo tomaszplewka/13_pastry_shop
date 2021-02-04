@@ -12,6 +12,7 @@
     border-radius: 10px;
     background-color: antiquewhite;
     transition: all .5s ease-in-out;
+    filter: drop-shadow(-10px 10px 10px rgba(50, 50, 0, 0.5));
 
     &-img {
         position: absolute;
@@ -21,9 +22,40 @@
         width: 100%;
         background-position: center;
         background-size: cover;
-        clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-        transform: translateY(-150px);
+        // clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        // transform: translateY(-150px);
         transition: all .5s ease-in-out;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transition: all .5s ease-in-out;
+        }
+        
+        &:hover {
+            cursor: pointer;
+            
+            &::before {
+                background-color: rgba(0, 0, 0, .25);
+                transition: all .5s ease-in-out;
+            }
+        }
+        
+        &-wrapper {
+            transform: translateY(-150px);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            // border: 1px solid black;
+        }
     }
 
     &-body {
@@ -48,12 +80,15 @@
     }
 
     &:hover {
-        transform: translate(-5px, -10px);
+        transform: translateY(-10px);
         transition: all .5s ease-in-out;
-        cursor: pointer;
+        // cursor: pointer;
+        filter: drop-shadow(-15px 15px 15px rgba(50, 50, 0, 0.75));
 
         .preview-item-img {
-            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            // clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            transform: scale(1.25);
+            transition: all 3s ease;
         }
     }
 }

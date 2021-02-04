@@ -1,0 +1,132 @@
+.sign-in {
+    // font-family: ;
+    font-weight: 500;
+    width: 300px;
+    position: relative;
+    margin: 2rem auto;
+    padding: 1rem;
+    overflow: hidden;
+    background-color: #111;
+    border-radius: 5px;
+    border: 1px solid #191919;
+    box-shadow: 
+        inset 0 0 2px 1px rgba(255,255,255,0.08),
+        0 16px 10px -8px rgba(0, 0, 0, 0.6);
+    color: white;
+
+    &::after {
+        content: "";
+        height: 2px;
+        width: 33%;
+        position: absolute;
+        left: 20%;
+        top: 0;
+        background: linear-gradient(to left, transparent, #444, #b6b6b8, #444, transparent);
+    }
+
+    &::before {
+        content: "";
+        width: 25px;
+        height: 5px;
+        position: absolute;
+        left: 32%;
+        top: -7px;
+        border-radius: 50%;
+        box-shadow: 0 0 6px 5px #fff;
+    }
+
+    &-form {
+
+        &::before {
+            content: "";
+            width: 400px;
+            height: 125px;
+            position: absolute;
+            top: 20px;
+            left: -5px;
+            transform: rotate(75deg);
+            background: linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+            pointer-events: none;
+        }
+    }
+
+    &-header {
+        // font-family: ;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        margin: 10px 10px 20px;
+        text-align: center;
+        font-size: 2rem;
+    }
+    
+    &-subheader {
+        display: inline-block;
+        // font-family: ;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+        margin: 10px 10px 20px;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .hexagon-wrapper {
+        margin: auto;
+        display: flex;
+        text-align: initial;
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+    }
+    .hexagon {
+        position: relative;
+        width: 46%;
+        height: 80%;
+        margin: auto;
+        color: white;
+        background: linear-gradient(-180deg, white, #fda3b2);
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        transition: 0.5s;
+    }
+    .hexagon svg {
+        z-index: 1;
+        margin: auto;
+        font-size: 50px;
+        color: transparent;
+        background: linear-gradient(45deg, #a58fe9, #e37682);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+    .hexagon:before,
+    .hexagon:after {
+        position: absolute;
+        content: "";
+        background: inherit;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        transition: 0.5s;
+        transform-origin: center;
+    }
+    .hexagon:before {
+        transform: rotateZ(60deg);
+    }
+    .hexagon:after {
+        transform: rotateZ(-60deg);
+    }
+    .hexagon:hover {
+        border-radius: 50px;
+        transition: 0.5s;
+    }
+    .hexagon:hover:before {
+        border-radius: 50px;
+        transition: 0.5s;
+    }
+    .hexagon:hover:after {
+        border-radius: 50px;
+        transition: 0.5s;
+    }
+}

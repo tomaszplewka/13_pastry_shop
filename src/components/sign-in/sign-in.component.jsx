@@ -30,8 +30,8 @@ class SignIn extends React.Component {
     render() {
         return (
             <div className="sign-in">
-                <h2>Sign In</h2>
-                {/* <span></span> */}
+                <h2 className="sign-in-header">sign in</h2>
+                {/* <span className="sign-in-subheader">I already have an account</span> */}
                 <form onSubmit={this.handleSubmit} className="sign-in-form">
                     <FormInput
                         type="email"
@@ -40,6 +40,7 @@ class SignIn extends React.Component {
                         value={this.state.email} required
                         handleChange={this.onChange}
                         label="email"
+                        placeholder="Email"
                     />
                     <FormInput
                         type="password"
@@ -48,9 +49,15 @@ class SignIn extends React.Component {
                         value={this.state.password} required
                         handleChange={this.onChange}
                         label="password"
+                        placeholder="Password"
                     />
                     <Btn type="submit">Sign In</Btn>
                 </form>
+                <div class="hexagon-wrapper">
+                    <div class="hexagon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                </div>
             </div>
         );
     }
