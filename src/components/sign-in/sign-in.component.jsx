@@ -3,6 +3,8 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import Btn from '../button/button.component';
 
+import { signInGoogle } from '../../firebase/firebase.utilities';
+
 import './sign-in.styles.scss';
 
 class SignIn extends React.Component {
@@ -52,6 +54,7 @@ class SignIn extends React.Component {
                         placeholder="Password"
                     />
                     <Btn type="submit">Sign In</Btn>
+                    <Btn type="submit" onClick={ signInGoogle }>Sign In With Google</Btn>
                 </form>
                 <div class="hexagon-wrapper">
                     <div class="hexagon">
