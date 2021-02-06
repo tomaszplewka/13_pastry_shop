@@ -14,11 +14,35 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+export const db = firebase.firestore();
 
-const provider = new auth.GoogleAuthProvider();
+const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ 'propmt': 'select_account' });
 
 export const signInGoogle = () => auth.signInWithPopup(provider);
+
+export const storeUser = async (userAuth, data) => {
+    if (userAuth) {
+        const userDocRef = db.collection('users').doc(userAuth.uid);
+        const userDocSnapshot = await userDocRef.get();
+
+        if (!userDocSnapshot.exists) {
+            const { displayName, email } = userAuth;
+            const createdAt = new Date();
+
+            try {
+                await userDocRef.set({
+                    displayName,
+                    email,
+                    createdAt,
+                    ...data
+                });
+            } catch (error) {
+                console.log("Error storing user's data. ", error.message);
+            }
+        }
+        return userDocRef;
+    } else { return; }
+};
 
 export default firebase;

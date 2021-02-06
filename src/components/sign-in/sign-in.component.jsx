@@ -3,7 +3,7 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import Btn from '../button/button.component';
 
-import { signInGoogle } from '../../firebase/firebase.utilities';
+import { auth, signInGoogle } from '../../firebase/firebase.utilities';
 
 import './sign-in.styles.scss';
 
@@ -17,10 +17,17 @@ class SignIn extends React.Component {
         };
     }
 
-    handleSubmit = e => {
+    handleSubmit = async e => {
         e.preventDefault();
 
-        this.setState({email: '', password: ''});
+        const { email, password } = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            this.setState({email: '', password: ''});
+        } catch (error) {
+            console.log('Error siging user in. ', error.message);
+        }
     };
 
     handleChange = e => {
@@ -40,7 +47,7 @@ class SignIn extends React.Component {
                         id="email"
                         name="email"
                         value={this.state.email} required
-                        handleChange={this.onChange}
+                        onChange={this.handleChange}
                         label="email"
                         placeholder="Email"
                     />
@@ -49,16 +56,16 @@ class SignIn extends React.Component {
                         id="password"
                         name="password"
                         value={this.state.password} required
-                        handleChange={this.onChange}
+                        onChange={this.handleChange}
                         label="password"
                         placeholder="Password"
                     />
                     <Btn type="submit">Sign In</Btn>
-                    <Btn type="submit" onClick={ signInGoogle }>Sign In With Google</Btn>
+                    <Btn type="button" onClick={ signInGoogle }>Sign In With Google</Btn>
                 </form>
-                <div class="hexagon-wrapper">
-                    <div class="hexagon">
-                        <i class="fab fa-facebook"></i>
+                <div className="hexagon-wrapper">
+                    <div className="hexagon">
+                        <i className="fab fa-facebook"></i>
                     </div>
                 </div>
             </div>

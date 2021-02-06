@@ -2,7 +2,7 @@ import React from 'react';
 
 import './form-input.styles.scss';
 
-const FormInput = ({ handleChange, label, ...otherProps }) => (
+const FormInput = ({ onChange, label, ...otherProps }) => (
     <div className="input-group">
         <label
             className={`form-input-label`}
@@ -12,9 +12,10 @@ const FormInput = ({ handleChange, label, ...otherProps }) => (
         </label>
         <input
             className="form-input"
-            onChange={handleChange}
-            placeholder={otherProps.placeholder}
-            id={otherProps.id}
+            onChange={onChange}
+            // placeholder={otherProps.placeholder}
+            // id={otherProps.id}
+            { ...otherProps }
         />
     </div>
 );
