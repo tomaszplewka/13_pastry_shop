@@ -10,7 +10,58 @@
         align-items: center;
 
         &-item {
-            padding: 0 1rem;
+            padding: 0 .5rem;
         }
     }
 }
+
+.basicBox, .swiggleBox, .checkBox {
+    width: 120px;
+    height: 50px;
+    margin: 0.5rem auto;
+    color: #4274D3;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.15rem;
+    line-height: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+svg rect, svg path, svg polyline {
+    fill: none;
+    stroke: #4274D3;
+    stroke-width: 1;
+}
+.basicBox:hover svg rect, .swiggleBox:hover svg path, .checkBox:hover svg polyline {
+    stroke: #4274D3;
+}
+/* Basic Box */
+svg rect {
+    stroke-dasharray: 400, 0;
+    transition: all 0.5s ease-in-out;
+}
+.basicBox:hover svg rect {
+  stroke-width: 3;
+  stroke-dasharray: 40, 245;
+//   stroke-dasharray: 35, 245;
+//   stroke-dashoffset: 38;
+  stroke-dashoffset: 75;
+  transition: all 0.5s ease-in-out;
+}
+/* Swiggle Box */
+// svg path {
+//   stroke-dasharray: 265, 0;
+//   transition: all 1s ease-in-out;
+// }
+// .swiggleBox:hover svg path {
+//   stroke-width: 3;
+//   stroke-dasharray: 0, 350;
+//   stroke-dashoffset: 20;
+//   transition: all 1s ease-in-out;
+// }
