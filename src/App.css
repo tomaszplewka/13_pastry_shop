@@ -1,9 +1,25 @@
+/* CSS variables */
+:root {
+    /* Colors */
+    --color-light: #f5f5f5;
+    --color-dark: #010110;
+    --color-green: #ABE188;
+    --color-yellow: #F7EF99;
+    --color-apricot: #F1BB87;
+    --color-dark-salmon: #F78E69;
+    --color-ebony: #5D675B;
+    --color-blue: #3A6EA5;
+    /* Menu link dimensions */
+    --menu-item-width: 120px;
+    --menu-item-height: 50px;
+}
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+/* General styling */
 a {
     text-decoration: none;
     color: black;
