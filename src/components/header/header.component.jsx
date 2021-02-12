@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utilities';
 
@@ -7,6 +8,9 @@ import { auth } from '../../firebase/firebase.utilities';
 import {ReactComponent as Logo} from '../../assets/crown.svg';
 
 import HeaderItem from '../header-item/header-item.component';
+
+import ShoppingCart from '../shopping-cart/shopping-cart.component';
+import ShoppingCartDropdown from '../shopping-cart-dropdown/shopping-cart-dropdown.component';
 
 import './header.styles.scss';
 
@@ -36,8 +40,14 @@ const Header = ({ currentUser }) => (
                     <HeaderItem/>
                 </Link>
             }
+            <ShoppingCart/>
         </div>
+        <ShoppingCartDropdown/>
     </div>
 );
 
-export default Header;
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+});
+
+export default connect(mapStateToProps)(Header);
