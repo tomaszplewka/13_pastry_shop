@@ -14,7 +14,7 @@ import ShoppingCartDropdown from '../shopping-cart-dropdown/shopping-cart-dropdo
 
 import './header.styles.scss';
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
     <div className="header">
         <Link className="header-logo-wrapper" to="/">
             {/* insert created logo here!!! */}
@@ -42,12 +42,16 @@ const Header = ({ currentUser }) => (
             }
             <ShoppingCart/>
         </div>
-        <ShoppingCartDropdown/>
+        {
+            hidden ? null :
+            <ShoppingCartDropdown/>
+        }
     </div>
 );
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = ({user: { currentUser }, shoppingCart: { hidden }}) => ({
+    currentUser,
+    hidden
 });
 
 export default connect(mapStateToProps)(Header);

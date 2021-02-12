@@ -45,8 +45,8 @@
     &:hover {
         color: #1f2124;
         box-shadow:
-            10px 10px 10px rgba(247, 247, 247, 0.2),
-            -10px -10px 10px rgba(247, 247, 247,0.2);
+            5px 5px 10px rgba(247, 247, 247, 0.2),
+            -5px -5px 10px rgba(247, 247, 247,0.2);
         transition: all .3s ease;
 
         &:after {
