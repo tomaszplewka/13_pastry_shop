@@ -1,5 +1,5 @@
 import { ShoppingCartActionTypes } from './shopping-cart.types';
-import { addItem } from './shopping-cart.utilities';
+import { addItem, removeItem } from './shopping-cart.utilities';
 
 const INITIAL_STATE = {
     hidden: true,
@@ -18,6 +18,16 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 shoppingCartItems: addItem(state.shoppingCartItems, action.payload)
             }
+        case ShoppingCartActionTypes.DELETE_ITEM_FROM_SHOPPING_CART:
+            return {
+                ...state,
+                shoppingCartItems: state.shoppingCartItems.filter(shoppingCartItem => shoppingCartItem.id !== action.payload.id)
+            };
+        case ShoppingCartActionTypes.REMOVE_SHOPPING_ITEM:
+            return {
+                ...state,
+                shoppingCartItems: removeItem(state.shoppingCartItems, action.payload)
+            };
         default:
             return state;
     }
