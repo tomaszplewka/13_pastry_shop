@@ -1,14 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-import CategoriesOverview from '../categories-overview/categories-overview.component';
+import CategoryItem from '../category-item/category-item.component';
+import { selectItemCategory } from '../../redux/item-category/item-category.selectors';
 
 import './category-wrapper.styles.scss';
 
 
-const CategoryWrapper = () => (
+const CategoryWrapper = ({ itemCategories }) => (
     <div className="category-item-wrapper">
-        <CategoriesOverview/>
+        {
+            itemCategories.map(({id, ...itemsProps}) => (
+                <CategoryItem key={id} {...itemsProps} />
+            ))
+        }
     </div>
 );
 
-export default CategoryWrapper;
+const mapStateToProps = createStructuredSelector({
+    itemCategories: selectItemCategory 
+});
+
+export default connect(mapStateToProps)(CategoryWrapper);

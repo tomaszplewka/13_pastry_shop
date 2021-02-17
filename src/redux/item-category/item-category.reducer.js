@@ -14,58 +14,58 @@ const INITIAL_STATE = {
             title: 'cakes',
             imageUrl: cakes,
             id: 1,
-            pageUrl: 'cakes'
+            pageUrl: 'shop/cakes'
         },
         {
             title: 'pies',
             imageUrl: pies,
             id: 2,
-            pageUrl: 'pies'
+            pageUrl: 'shop/pies'
         },
         {
             title: 'cookies',
             imageUrl: cookies,
             id: 3,
-            pageUrl: 'cookies'
+            pageUrl: 'shop/cookies'
         },
         {
             title: 'donuts',
             imageUrl: donuts,
             id: 4,
-            pageUrl: 'donuts'
+            pageUrl: 'shop/donuts'
         },
         // {
         //     title: 'scones',
         //     imageUrl: scones,
         //     id: 5,
-        //     pageUrl: 'scones'
+        //     pageUrl: 'shop/scones'
         // },
         {
             title: 'croissants',
             imageUrl: croissants,
             id: 6,
-            pageUrl: 'croissants'
+            pageUrl: 'shop/croissants'
         },
         {
             title: 'treats',
             imageUrl: treats,
             size: 'large',
             id: 7,
-            pageUrl: 'treats'
+            pageUrl: 'shop/treats'
         },
         {
             title: 'gift boxes',
             imageUrl: giftBoxes,
             size: 'large',
             id: 8,
-            pageUrl: 'gift-boxes'
+            pageUrl: 'shop/gift-boxes'
         },
         {
             title: 'catering',
             imageUrl: catering,
             size: 'large',
             id: 9,
-            pageUrl: 'catering'
+            pageUrl: 'shop/catering'
         }
     ]
 };

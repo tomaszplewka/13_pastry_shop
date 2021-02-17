@@ -45,8 +45,8 @@ import showcase2 from '../../images/catering/showcase-2.jpg';
 import showcase3 from '../../images/catering/showcase-3.jpg';
 import showcase4 from '../../images/catering/showcase-4.jpg';
 
-const ShopPageData = [
-    {
+const ShopPageData = {
+    cakes: {
         id: 1,
         category: 'cakes',
         route: 'cakes',
@@ -88,7 +88,7 @@ const ShopPageData = [
             }
         ]
     },
-    {
+    pies: {
         id: 2,
         category: 'pies',
         route: 'pies',
@@ -130,7 +130,7 @@ const ShopPageData = [
             }
         ]
     },
-    {
+    cookies: {
         id: 3,
         category: 'cookies',
         route: 'cookies',
@@ -172,7 +172,7 @@ const ShopPageData = [
             }
         ]
     },
-    {
+    donuts: {
         id: 4,
         category: 'donuts',
         route: 'donuts',
@@ -214,7 +214,7 @@ const ShopPageData = [
             }
         ]
     },
-    // {
+    // scones: {
     //     id: 5,
     //     category: 'scones',
     //     route: 'scones',
@@ -227,7 +227,7 @@ const ShopPageData = [
     //         }
     //     ]
     // },
-    {
+    croissants: {
         id: 6,
         category: 'croissants',
         route: 'croissants',
@@ -269,7 +269,7 @@ const ShopPageData = [
             }
         ]
     },
-    {
+    treats: {
         id: 7,
         category: 'treats',
         route: 'treats',
@@ -311,7 +311,7 @@ const ShopPageData = [
             }
         ]
     },
-    {
+    "gift-boxes": {
         id: 8,
         category: 'gift boxes',
         route: 'gift-boxes',
@@ -353,7 +353,7 @@ const ShopPageData = [
             }
         ]
     },
-    {
+    catering: {
         id: 9,
         category: 'catering',
         route: 'catering',
@@ -384,5 +384,5 @@ const ShopPageData = [
             }
         ]
     }
-];
+};
 export default ShopPageData;
