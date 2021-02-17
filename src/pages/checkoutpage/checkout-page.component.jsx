@@ -6,6 +6,8 @@ import { selectShoppingCartItems, selectShoppingCartItemsTotal } from '../../red
 
 import CheckoutShoppingItem from '../../components/checkout-shopping-item/checkout-shopping-item.component';
 
+import StripeCheckoutBtn from '../../components/stripe-checkout/stripe-checkout.component';
+
 import './checkout-page.styles.scss';
 
 const CheckoutPage = ({ shoppingCartItems, shoppingCartItemsTotal }) => (
@@ -35,6 +37,12 @@ const CheckoutPage = ({ shoppingCartItems, shoppingCartItemsTotal }) => (
         <div className="checkout-page-total">
             Total ${shoppingCartItemsTotal}
         </div>
+        <div className="payment-warning">
+            *This is test mode. Please use the following test credit card details for payment:
+            <br/>
+            4242 4242 4242 4242 - Exp: any time in the future - CVV: any number
+        </div>
+        <StripeCheckoutBtn price={shoppingCartItemsTotal} />
     </div>
 );
 
