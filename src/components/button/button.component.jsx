@@ -1,14 +1,13 @@
 import React from 'react';
 
-import './button.styles.scss';
+// import './button.styles.scss';
+
+import { ButtonContainer } from './button.styles';
 
 const Btn = ({ children, inverted, ...otherProps }) => (
-    <button className={`btn 
-        ${inverted ? 'btn-inverted' : ''}`}
-        { ...otherProps }
-    >
+    <ButtonContainer { ...otherProps } >
         <span>{ children }</span>
-    </button>
+    </ButtonContainer>
 );
 
 export default Btn;

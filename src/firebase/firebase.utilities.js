@@ -45,4 +45,33 @@ export const storeUser = async (userAuth, data) => {
     } else { return; }
 };
 
+export const addShopData = async (categoryKey, objectsToAdd) => {
+    const categoryRef = db.collection(categoryKey);
+    
+    const batch = db.batch();
+    objectsToAdd.forEach(object => {
+        const objectRef = categoryRef.doc();
+        batch.set(objectRef, object);
+    });
+
+    return await batch.commit();
+};
+
+export const convertCategoriesToObject = categories => {
+    const transformedCategories = categories.docs.map(doc => {
+        const { category, items } = doc.data();
+
+        return {
+            route: encodeURI(category.toLowerCase()),
+            id: doc.id,
+            category, items
+        };
+    });
+
+    return transformedCategories.reduce((accumulator, category) => {
+        accumulator[category.category.toLowerCase()] = category;
+        return accumulator;
+    }, {});
+};
+
 export default firebase;
