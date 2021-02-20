@@ -1,9 +1,7 @@
-import SHOP_DATA from './shoppage.data';
-
 import ShopPageActionTypes from './shoppage.types';
 
 const INITIAL_STATE = {
-    data: SHOP_DATA
+    data: null
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
@@ -11,7 +9,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         case ShopPageActionTypes.UPDATE_CATEGORIES:
             return {
                 ...state,
-                categories: action.payload
+                data: action.payload
             }
         default:
             return state;
