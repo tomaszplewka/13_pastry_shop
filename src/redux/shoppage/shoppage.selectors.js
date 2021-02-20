@@ -16,3 +16,13 @@ export const selectCategory = categoryId => createSelector(
     [selectShopDataItems],
     data => data ? data[categoryId] : []
 );
+
+export const selectIsDataFetched = createSelector(
+    [selectShopData],
+    shopData => shopData.isFetching
+);
+
+export const selectIsDataLoaded = createSelector(
+    [selectShopData],
+    shopData => !!shopData.data
+);

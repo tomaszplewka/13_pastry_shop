@@ -2,14 +2,10 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import CategoryOverview from '../../components/categories-overview/categories-overview.component';
-import CategoryPage from '../categorypage/category-page.component';
+import CategoryOverviewContainer from '../../components/categories-overview/categories-overview.container';
+import CategoryPageContainer from '../categorypage/category-page.container';
 
-import { db, convertCategoriesToObject } from '../../firebase/firebase.utilities';
-
-import { updateCategories } from '../../redux/shoppage/shoppage.actions';
-
-import WithSpinner from '../../components/with-spinner/with-spinner.component';
+import { fetchDataStartAsync } from '../../redux/shoppage/shoppage.actions';
 
 import './shoppage.styles.scss';
 
@@ -60,54 +56,26 @@ import showcase2 from '../../images/catering/showcase-2.jpg';
 import showcase3 from '../../images/catering/showcase-3.jpg';
 import showcase4 from '../../images/catering/showcase-4.jpg';
 
-const CategoryOverviewWithSpinner = WithSpinner(CategoryOverview);
-const CategoryPageWithSpinner = WithSpinner(CategoryPage);
-
 class ShopPage extends React.Component {
-    state = {
-        loading: true
-    };
-
-    unsubscribeFromSnapshot = null;
 
     componentDidMount() {
-        const { updateCategories } = this.props;
-        const categoriesRef = db.collection('categories');
-        // Observable pattern
-        // this.unsubscribeFromSnapshot = categoriesRef.onSnapshot(async snapshot => {
-        //     const categoriesObj = convertCategoriesToObject(snapshot);
-        //     console.log(categoriesObj);
-        //     updateCategories(categoriesObj);
-        //     this.setState({ loading: false });
-        // });
-        // Promise pattern
-        categoriesRef.get()
-            .then(snapshot => {
-                const categoriesObj = convertCategoriesToObject(snapshot);
-                console.log(categoriesObj);
-                updateCategories(categoriesObj);
-                this.setState({ loading: false });
-            });
+        const { fetchDataStartAsync } = this.props;
+        fetchDataStartAsync();
     };
-
-    // componentWillUnmount() {
-    //     this.unsubscribeFromSnapshot();
-    // };
 
     render() {
         const { match } = this.props;
-        const { loading } = this.state;
         return (
             <div className="shop-page">
-                <Route exact path={ `${match.path}` } render={props => <CategoryOverviewWithSpinner isLoading={ loading } { ...props } />} />
-                <Route path={`${match.path}/:categoryId`} render={props => <CategoryPageWithSpinner isLoading={ loading } { ...props } />} />
+                <Route exact path={ `${match.path}` } component={CategoryOverviewContainer} />
+                <Route path={`${match.path}/:categoryId`} component={CategoryPageContainer} />
             </div>
         );
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    updateCategories: categories => dispatch(updateCategories(categories))
+    fetchDataStartAsync: () => dispatch(fetchDataStartAsync())
 });
 
 export default connect(null, mapDispatchToProps)(ShopPage);

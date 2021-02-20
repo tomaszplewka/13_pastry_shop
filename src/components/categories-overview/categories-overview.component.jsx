@@ -9,7 +9,8 @@ import './categories-overview.styles.scss';
 
 const CategoriesOverview = ({ itemCategories }) => {
 
-    // console.log(itemCategories)
+    const item_order = ["cakes", "cookies", "croissants", "donuts", "pies", "treats", "gift boxes", "catering"];
+    itemCategories.sort((a, b) => item_order.indexOf(a.category) - item_order.indexOf(b.category));
         return (
             <div className="categories-overview">
                 {
