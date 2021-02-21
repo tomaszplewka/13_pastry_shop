@@ -2,7 +2,6 @@ import ShopPageActionTypes from './shoppage.types';
 
 import { db, convertCategoriesToObject } from '../../firebase/firebase.utilities';
 
-
 export const fetchDataStart = () => ({
     type: ShopPageActionTypes.FETCH_DATA_START
 });

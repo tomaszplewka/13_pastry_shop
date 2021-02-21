@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import FormInput from '../form-input/form-input.component';
 import Btn from '../button/button.component';
 
-import { auth, signInGoogle } from '../../firebase/firebase.utilities';
+import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions';
 
 import './sign-in.styles.scss';
 
@@ -19,15 +20,10 @@ class SignIn extends React.Component {
 
     handleSubmit = async e => {
         e.preventDefault();
-
+        const { emailSignInStart } = this.props;
         const { email, password } = this.state;
 
-        try {
-            await auth.signInWithEmailAndPassword(email, password);
-            this.setState({email: '', password: ''});
-        } catch (error) {
-            console.log('Error siging user in. ', error.message);
-        }
+        emailSignInStart(email, password);
     };
 
     handleChange = e => {
@@ -37,6 +33,7 @@ class SignIn extends React.Component {
     };
 
     render() {
+        const { googleSignInStart } = this.props;
         return (
             <div className="sign-in">
                 <h2 className="sign-in-header">sign in</h2>
@@ -61,7 +58,7 @@ class SignIn extends React.Component {
                         placeholder="Password"
                     />
                     <Btn type="submit">Sign In</Btn>
-                    <Btn type="button" onClick={ signInGoogle }>Sign In With Google</Btn>
+                    <Btn type="button" onClick={ googleSignInStart }>Sign In With Google</Btn>
                 </form>
                 <div className="hexagon-wrapper">
                     <div className="hexagon">
@@ -73,4 +70,9 @@ class SignIn extends React.Component {
     }
 }
 
-export default SignIn;
+const mapDispatchToProps = dispatch => ({
+    googleSignInStart: () => dispatch(googleSignInStart()),
+    emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password }))
+});
+
+export default connect(null, mapDispatchToProps)(SignIn);

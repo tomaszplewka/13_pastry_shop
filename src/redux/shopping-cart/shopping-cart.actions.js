@@ -18,3 +18,7 @@ export const deleteItemFromShoppingCart = item => ({
     type: ShoppingCartActionTypes.DELETE_ITEM_FROM_SHOPPING_CART,
     payload: item
 });
+
+export const clearShoppingCart = () => ({
+    type: ShoppingCartActionTypes.CLEAR_SHOPPING_CART
+});

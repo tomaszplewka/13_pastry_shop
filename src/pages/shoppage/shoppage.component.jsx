@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import CategoryOverviewContainer from '../../components/categories-overview/categories-overview.container';
 import CategoryPageContainer from '../categorypage/category-page.container';
 
-import { fetchDataStartAsync } from '../../redux/shoppage/shoppage.actions';
+import { fetchDataStart } from '../../redux/shoppage/shoppage.actions';
 
 import './shoppage.styles.scss';
 
@@ -59,8 +59,8 @@ import showcase4 from '../../images/catering/showcase-4.jpg';
 class ShopPage extends React.Component {
 
     componentDidMount() {
-        const { fetchDataStartAsync } = this.props;
-        fetchDataStartAsync();
+        const { fetchDataStart } = this.props;
+        fetchDataStart();
     };
 
     render() {
@@ -75,7 +75,7 @@ class ShopPage extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    fetchDataStartAsync: () => dispatch(fetchDataStartAsync())
+    fetchDataStart: () => dispatch(fetchDataStart())
 });
 
 export default connect(null, mapDispatchToProps)(ShopPage);
