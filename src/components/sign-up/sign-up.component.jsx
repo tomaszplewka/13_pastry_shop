@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import FormInput from '../form-input/form-input.component';
@@ -8,23 +8,12 @@ import { signUpStart } from '../../redux/user/user.actions';
 
 import './sign-up.styles.scss';
 
-class SignUp extends React.Component {
-    constructor(props) {
-        super(props);
+const SignUp = ({ signUpStart }) => {
+    const [ userCred, setUserCred ] = useState({ email: '', password: '', displayName: '', confirmPassword: ''});
+    const { displayName, email, password, confirmPassword } = userCred;
 
-        this.state = {
-            displayName: '',
-            email: '',
-            password: '',
-            confirmPassword: ''
-        }
-    }
-
-    handleSubmit = async e => {
+    const handleSubmit = async e => {
         e.preventDefault();
-
-        const { signUpStart } = this.props;
-        const { displayName, email, password, confirmPassword } = this.state;
         if (password !== confirmPassword) {
             // password don't match - show error msg
             return;
@@ -32,66 +21,61 @@ class SignUp extends React.Component {
         signUpStart({ displayName, email, password });
     };
 
-    handleChange = e => {
+    const handleChange = e => {
         const { name, value } = e.target;
-
-        this.setState({ [name]: value });
+        setUserCred({ ...userCred, [name]: value });
     };
 
-    render() {
-        // const { displayName, email, password, confirmPassword } = this.state;
-
-        return (
-            <div className="sign-up">
-                <h2 className="sign-up-header">sign in</h2>
-                {/* <span className="sign-in-subheader">I already have an account</span> */}
-                <form onSubmit={this.handleSubmit} className="sign-up-form">
-                    <FormInput
-                        type="text"
-                        id="displayName"
-                        name="displayName"
-                        value={this.state.displayName}
-                        required
-                        onChange={this.handleChange}
-                        label="displayName"
-                        placeholder="Username"
-                    />
-                    <FormInput
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={this.state.email}
-                        required
-                        onChange={this.handleChange}
-                        label="email"
-                        placeholder="Email"
-                    />
-                    <FormInput
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={this.state.password}
-                        required
-                        onChange={this.handleChange}
-                        label="password"
-                        placeholder="password"
-                    />
-                    <FormInput
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        value={this.state.confirmPassword}
-                        required
-                        onChange={this.handleChange}
-                        label="confirmPassword"
-                        placeholder="confirmPassword"
-                    />
-                    <Btn type="submit">Sign Up</Btn>
-                    {/* <Btn type="submit" onClick={ signInGoogle }>Sign In With Google</Btn> */}
-                </form>
-            </div>
-        )
-    }
+    return (
+        <div className="sign-up">
+            <h2 className="sign-up-header">sign in</h2>
+            {/* <span className="sign-in-subheader">I already have an account</span> */}
+            <form onSubmit={handleSubmit} className="sign-up-form">
+                <FormInput
+                    type="text"
+                    id="displayName"
+                    name="displayName"
+                    value={displayName}
+                    required
+                    onChange={handleChange}
+                    label="displayName"
+                    placeholder="Username"
+                />
+                <FormInput
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={email}
+                    required
+                    onChange={handleChange}
+                    label="email"
+                    placeholder="Email"
+                />
+                <FormInput
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={password}
+                    required
+                    onChange={handleChange}
+                    label="password"
+                    placeholder="password"
+                />
+                <FormInput
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    value={confirmPassword}
+                    required
+                    onChange={handleChange}
+                    label="confirmPassword"
+                    placeholder="confirmPassword"
+                />
+                <Btn type="submit">Sign Up</Btn>
+                {/* <Btn type="submit" onClick={ signInGoogle }>Sign In With Google</Btn> */}
+            </form>
+        </div>
+    );
 }
 
 const mapDispatchToProps = dispatch => ({

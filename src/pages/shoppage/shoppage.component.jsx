@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -56,22 +56,17 @@ import showcase2 from '../../images/catering/showcase-2.jpg';
 import showcase3 from '../../images/catering/showcase-3.jpg';
 import showcase4 from '../../images/catering/showcase-4.jpg';
 
-class ShopPage extends React.Component {
-
-    componentDidMount() {
-        const { fetchDataStart } = this.props;
+const ShopPage = ({ fetchDataStart, match }) => {
+    useEffect(() => {
         fetchDataStart();
-    };
+    }, [fetchDataStart]);
 
-    render() {
-        const { match } = this.props;
-        return (
-            <div className="shop-page">
-                <Route exact path={ `${match.path}` } component={CategoryOverviewContainer} />
-                <Route path={`${match.path}/:categoryId`} component={CategoryPageContainer} />
-            </div>
-        );
-    }
+    return (
+        <div className="shop-page">
+            <Route exact path={ `${match.path}` } component={CategoryOverviewContainer} />
+            <Route path={`${match.path}/:categoryId`} component={CategoryPageContainer} />
+        </div>
+    );
 }
 
 const mapDispatchToProps = dispatch => ({
