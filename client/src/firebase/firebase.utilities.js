@@ -82,4 +82,17 @@ export const convertCategoriesToObject = categories => {
     }, {});
 };
 
+export const getUserShoppingCartRef = async userId => {
+    const cartsRef = db.collection('carts').where('userId', '==', userId);
+    const snapShot = await cartsRef.get();
+
+    if (snapShot.empty) {
+        const cartDocRef = db.collection('carts').doc();
+        await cartDocRef.set({ userId, shoppingCartItems: [] });
+        return cartDocRef;
+    } else {
+        return snapShot.docs[0].ref;
+    }
+};
+
 export default firebase;
