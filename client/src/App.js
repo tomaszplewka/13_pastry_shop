@@ -14,7 +14,7 @@ import ErrorBoundary from './components/error-boundary/error-boundary.component'
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
-const FrontPageCategories = lazy(() => import('./pages/frontpage/frontpage-categories.component'));
+const FrontPage = lazy(() => import('./pages/frontpage/frontpage.component'));
 const ShopPage = lazy(() => import('./pages/shoppage/shoppage.component'));
 const CheckoutPage = lazy(() => import('./pages/checkoutpage/checkout-page.component'));
 const Auth = lazy(() => import('./pages/auth/auth.component'));
@@ -31,13 +31,14 @@ const App = ({ checkUserSession, currentUser }) => {
             <Switch>
                 <ErrorBoundary>
                     <Suspense fallback={<Spinner/>}>
-                        <Route exact path='/' component={ FrontPageCategories } />
+                        <Route exact path='/' component={ FrontPage } />
                         <Route path='/shop' component={ ShopPage } />
                         <Route exact path='/checkout' component={ CheckoutPage } />
                         <Route exact path='/sign-in' render={() => currentUser ? (<Redirect to="/" />) : <Auth/>} />
                     </Suspense>
                 </ErrorBoundary>
             </Switch>
+            <p>Footer + Sign Up to receive special offer</p>
         </div>
     );
 }

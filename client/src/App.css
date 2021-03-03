@@ -1,14 +1,14 @@
 /* CSS variables */
 :root {
     /* Colors */
-    --color-light: #f5f5f5;
-    --color-dark: #010110;
+    --color-light: rgb(245, 245, 245);
+    --color-dark: rgb(1, 1, 16);
     --color-green: #ABE188;
-    --color-yellow: #F7EF99;
-    --color-apricot: #F1BB87;
+    --color-yellow: rgb(247, 239, 153);
+    --color-apricot: rgb(241, 187, 135);
     --color-dark-salmon: #F78E69;
-    --color-ebony: #5D675B;
-    --color-blue: #3A6EA5;
+    --color-ebony: rgb(93, 103, 91);
+    --color-blue: rgb(58, 110, 165);
     /* Menu link dimensions */
     --menu-item-width: 120px;
     --menu-item-height: 50px;
