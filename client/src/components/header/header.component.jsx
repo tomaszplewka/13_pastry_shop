@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 // create and import logo
-import {ReactComponent as Logo} from '../../assets/crown.svg';
+// import {ReactComponent as Logo} from '../../assets/crown.svg';
 
 import HeaderItem from '../header-item/header-item.component';
 
 import ShoppingCart from '../shopping-cart/shopping-cart.component';
 import ShoppingCartDropdown from '../shopping-cart-dropdown/shopping-cart-dropdown.component';
+import ShoppingSearch from '../shopping-search/shopping-search.components';
 
 import { selectShoppingCartHidden } from '../../redux/shopping-cart/shopping-cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
@@ -19,8 +20,7 @@ import { HeaderContainer, LogoContainer, HeaderMenuContainer, MenuItemLink } fro
 const Header = ({ currentUser, hidden, signOutStart }) => (
     <HeaderContainer>
         <LogoContainer to="/">
-            {/* insert created logo here!!! */}
-            <Logo className="header-logo" />
+            <h1 className="header-logo">Pastry Shop</h1>
         </LogoContainer>
         <HeaderMenuContainer>
             <MenuItemLink to="/shop">
@@ -43,6 +43,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
                 </MenuItemLink>
             }
             <ShoppingCart/>
+            <ShoppingSearch/>
         </HeaderMenuContainer>
         {
             hidden ? null :

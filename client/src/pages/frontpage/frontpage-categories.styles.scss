@@ -1,11 +1,4 @@
-// Sass variables
-// 
-// .frontpage-categories {
-//     position: relative;
-//     background-color: silver;
-//     padding: 5rem 1rem 10rem;
-// }
-.custom-shape-divider-bottom-1612116110 {
+.shape-divider-bottom {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -14,21 +7,44 @@
     line-height: 0;
     transform: rotate(180deg);
 }
-.custom-shape-divider-bottom-1612116110 svg {
+.shape-divider-bottom svg,
+.shape-divider-top svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 150px;
+    height: 75px;
 }
-.custom-shape-divider-bottom-1612116110 .shape-fill {
+.shape-divider-bottom .shape-fill {
     fill: #FFFFFF;
 }
+
+.shape-divider-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.shape-divider-top .shape-fill {
+    fill: var(--color-light);
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .shape-divider-top svg {
+        width: calc(100% + 1.3px);
+        height: 115px;
+    }
+}
+
 
 @media screen and (min-width: 1216px) {
     
 }
 @media screen and (min-width: 1408px) {
-    .custom-shape-divider-bottom-1612116110 svg {
+    .shape-divider-bottom svg {
         height: 275px;
     }
 }
