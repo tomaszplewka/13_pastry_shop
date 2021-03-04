@@ -3,9 +3,9 @@
     /* Colors */
     --color-light: rgb(245, 245, 245);
     --color-dark: rgb(1, 1, 16);
-    --color-green: #ABE188;
+    --color-green: rgb(171, 225, 136);
     --color-yellow: rgb(247, 239, 153);
-    --color-apricot: rgb(241, 187, 135);
+    --color-apricot: #f1bb87;
     --color-dark-salmon: #F78E69;
     --color-ebony: rgb(93, 103, 91);
     --color-blue: rgb(58, 110, 165);

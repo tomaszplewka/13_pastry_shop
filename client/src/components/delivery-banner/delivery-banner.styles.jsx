@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const DeliveryBannerContainer = styled.div`
     background-color: var(--color-yellow);
+    background: radial-gradient(circle, rgba(245,245,245,1) 0%, rgba(247,239,153,1) 32.5%);
     position: relative;
-    padding: 2rem;
+    padding: 4rem 2rem;
 `;
 export const DeliveryBannerTitle = styled.h3`
     font-size: 2rem;
@@ -21,6 +22,7 @@ export const DeliveryBannerIconsWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow(0 10px 10px rgba(93, 103, 91, .75));
 `;
 export const DeliveryBannerIconContainer = styled.div`
     text-align: center;
