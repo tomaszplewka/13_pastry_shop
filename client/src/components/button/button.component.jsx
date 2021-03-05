@@ -1,12 +1,10 @@
 import React from 'react';
 
-// import './button.styles.scss';
+import { ButtonContainer, ButtonOverlay } from './button.styles';
 
-import { ButtonContainer } from './button.styles';
-
-const Btn = ({ children, inverted, ...otherProps }) => (
-    <ButtonContainer { ...otherProps } >
-        <span>{ children }</span>
+const Btn = ({ children, fullWidth, ...otherProps }) => (
+    <ButtonContainer fullWidth={fullWidth} { ...otherProps } >
+        <ButtonOverlay>{ children }</ButtonOverlay>
     </ButtonContainer>
 );
 

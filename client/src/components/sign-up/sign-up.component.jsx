@@ -6,7 +6,7 @@ import Btn from '../button/button.component';
 
 import { signUpStart } from '../../redux/user/user.actions';
 
-import './sign-up.styles.scss';
+import { SignUpContainer, SignUpForm, SignUpTitle } from './sing-up.styles';
 
 const SignUp = ({ signUpStart }) => {
     const [ userCred, setUserCred ] = useState({ email: '', password: '', displayName: '', confirmPassword: ''});
@@ -27,18 +27,17 @@ const SignUp = ({ signUpStart }) => {
     };
 
     return (
-        <div className="sign-up">
-            <h2 className="sign-up-header">sign in</h2>
-            {/* <span className="sign-in-subheader">I already have an account</span> */}
-            <form onSubmit={handleSubmit} className="sign-up-form">
+        <SignUpContainer>
+            <SignUpTitle>sign up</SignUpTitle>
+            <SignUpForm onSubmit={handleSubmit}>
                 <FormInput
                     type="text"
-                    id="displayName"
-                    name="displayName"
+                    id="Username"
+                    name="Username"
                     value={displayName}
                     required
                     onChange={handleChange}
-                    label="displayName"
+                    label="Username"
                     placeholder="Username"
                 />
                 <FormInput
@@ -59,7 +58,7 @@ const SignUp = ({ signUpStart }) => {
                     required
                     onChange={handleChange}
                     label="password"
-                    placeholder="password"
+                    placeholder="Password"
                 />
                 <FormInput
                     type="password"
@@ -68,13 +67,13 @@ const SignUp = ({ signUpStart }) => {
                     value={confirmPassword}
                     required
                     onChange={handleChange}
-                    label="confirmPassword"
-                    placeholder="confirmPassword"
+                    label="confirm Password"
+                    placeholder="Confirm Password"
                 />
-                <Btn type="submit">Sign Up</Btn>
+                <Btn type="submit" fullWidth>Sign Up</Btn>
                 {/* <Btn type="submit" onClick={ signInGoogle }>Sign In With Google</Btn> */}
-            </form>
-        </div>
+            </SignUpForm>
+        </SignUpContainer>
     );
 }
 

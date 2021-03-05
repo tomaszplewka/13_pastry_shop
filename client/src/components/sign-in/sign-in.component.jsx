@@ -6,7 +6,7 @@ import Btn from '../button/button.component';
 
 import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions';
 
-import './sign-in.styles.scss';
+import { SignInContainer, SignInForm, SignInTitle } from './sign-in.styles';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     const [ userCred, setUserCred ] = useState({ email: '', password: '' });
@@ -23,10 +23,9 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     };
 
     return (
-        <div className="sign-in">
-            <h2 className="sign-in-header">sign in</h2>
-            {/* <span className="sign-in-subheader">I already have an account</span> */}
-            <form onSubmit={handleSubmit} className="sign-in-form">
+        <SignInContainer>
+            <SignInTitle>sign in</SignInTitle>
+            <SignInForm onSubmit={handleSubmit}>
                 <FormInput
                     type="email"
                     id="email"
@@ -45,15 +44,10 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
                     label="password"
                     placeholder="Password"
                 />
-                <Btn type="submit">Sign In</Btn>
-                <Btn type="button" onClick={ googleSignInStart }>Sign In With Google</Btn>
-            </form>
-            <div className="hexagon-wrapper">
-                <div className="hexagon">
-                    <i className="fab fa-facebook"></i>
-                </div>
-            </div>
-        </div>
+                <Btn type="submit" fullWidth>Sign In</Btn>
+                <Btn type="button" fullWidth onClick={ googleSignInStart }>Sign In With Google</Btn>
+            </SignInForm>
+        </SignInContainer>
     );
 }
 

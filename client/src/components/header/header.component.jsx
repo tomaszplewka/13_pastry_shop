@@ -23,8 +23,12 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
             <h1 className="header-logo">Pastry Shop</h1>
         </LogoContainer>
         <HeaderMenuContainer>
-            <MenuItemLink to="/shop">
-                shop
+            <MenuItemLink to="/offer">
+                offer
+                <HeaderItem/>
+            </MenuItemLink>
+            <MenuItemLink to="/about-us">
+                about us
                 <HeaderItem/>
             </MenuItemLink>
             <MenuItemLink to="/contact">
